@@ -1,0 +1,62 @@
+<div class="form-container">
+  <h2>Order Your Favourite Crackers</h2>
+  <form [formGroup]="crackersForm" (ngSubmit)="onSubmit()">
+
+    <label>Name:</label>
+    <input type="text" formControlName="name" />
+    <div *ngIf="f['name'].touched && f['name'].invalid" class="error">
+      Name is required (min 3 characters).
+    </div>
+
+    <label>Phone Number:</label>
+    <input type="tel" formControlName="phone" />
+    <div *ngIf="f['phone'].touched && f['phone'].invalid" class="error">
+      Enter a valid 10-digit number.
+    </div>
+
+    <label>Age:</label>
+    <input type="number" formControlName="age" />
+    <div *ngIf="f['age'].touched && f['age'].invalid" class="error">
+      Must be 13 years or older.
+    </div>
+
+    <label>Address:</label>
+    <textarea formControlName="address"></textarea>
+    <div *ngIf="f['address'].touched && f['address'].invalid" class="error">
+      Address is required.
+    </div>
+
+    <label>Budget (₹):</label>
+    <input type="number" formControlName="budget" />
+    <div *ngIf="f['budget'].touched && f['budget'].invalid" class="error">
+      Enter a valid amount.
+    </div>
+
+    <label>Select Crackers:</label>
+    <select formControlName="selectedCrackers">
+      <option value="">--Choose--</option>
+      <option value="Sparklers">Sparklers</option>
+      <option value="Flower Pots">Flower Pots</option>
+      <option value="Bombs">Bombs</option>
+      <option value="Rockets">Rockets</option>
+      <option value="Ground Chakras">Ground Chakras</option>
+    </select>
+    <div *ngIf="f['selectedCrackers'].touched && f['selectedCrackers'].invalid" class="error">
+      Please select a cracker type.
+    </div>
+
+    <label>Have you selected the required items? Type "yes":</label>
+    <input type="text" formControlName="confirmation" />
+    <div *ngIf="f['confirmation'].touched && f['confirmation'].invalid" class="error">
+      Please type "yes" to confirm.
+    </div>
+
+    <button type="submit" [disabled]="crackersForm.invalid">Submit Order</button>
+  </form>
+</div>
+
+<br>
+<br>
+<button type="submit2" (click)="Done()"> Done Shopping </button>
+
+

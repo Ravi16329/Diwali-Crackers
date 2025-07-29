@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <!-- Floating Text Fullscreen Background -->
+     <div>
+<div class="floating-layer">
+  <div class="floating-text" *ngFor="let item of floatingTexts"
+       [ngStyle]="{
+         top: item.top,
+         left: item.left,
+         animationDuration: item.duration + 's'
+       }">
+    {{ item.text }}
+  </div>
+</div>
+
+<!-- Your Address Content -->
+<div class="address-container">
+  <img src="https://th.bing.com/th/id/OIP.ZzOIcaECHSD-DuDy0fRpoAHaEK?w=333&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="School Image">
+  <p>
+    Andhra Pradesh, Antapur,<br>
+    Mudigubba Mandal,<br>
+    Mudigubba Boy's Highschool
+  </p>
+</div>
+
+<div class="button-wrapper">
+  <button (click)="method()" class="styled-button">Still Dout</button>
+</div>
+
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,185 @@
+:host {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #1a1a2e;
+    overflow: hidden;
+  }
+
+  .diwali-scene {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 50px;
+    z-index: 1; /* Ensure foreground elements are above background */
+  }
+
+  .blast-layer {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 50px;
+    z-index: -1; /* Place blasts in the background */
+    pointer-events: none; /* Avoid interfering with foreground interactions */
+  }
+
+  /* Realistic Stick Figure Styles */
+  .stick-person {
+    position: relative;
+    width: 80px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; /* Ensure stick figures are above blasts */
+  }
+
+  .head {
+    width: 24px;
+    height: 24px;
+    background: #f4c7ab; /* Skin tone */
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    border: 1px solid #333;
+  }
+
+  .head::before,
+  .head::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #000; /* Eyes */
+    border-radius: 50%;
+    top: 8px;
+  }
+
+  .head::before {
+    left: 5px;
+  }
+
+  .head::after {
+    right: 5px;
+  }
+
+  .body {
+    width: 20px;
+    height: 50px;
+    background: linear-gradient(#ff6f61, #d64161); /* Traditional attire color */
+    position: absolute;
+    top: 26px;
+    border-radius: 5px;
+  }
+
+  .arm {
+    width: 30px;
+    height: 6px;
+    background: #f4c7ab; /* Skin tone */
+    position: absolute;
+    top: 32px;
+    border: 1px solid #333;
+  }
+
+  .arm.left {
+    left: -15px;
+    transform-origin: right center;
+    animation: wave 2s infinite ease-in-out;
+  }
+
+  .arm.right {
+    right: -15px;
+    transform-origin: left center;
+    animation: wave 2s infinite ease-in-out 0.5s;
+  }
+
+  .leg {
+    width: 8px;
+    height: 50px;
+    background: #333; /* Dark pants/dress */
+    position: absolute;
+    top: 76px;
+  }
+
+  .leg.left {
+    left: 14px;
+  }
+
+  .leg.right {
+    right: 14px;
+  }
+
+  /* Rocket Cracker Styles */
+  .rocket {
+    position: relative;
+    width: 20px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; /* Ensure rockets are above blasts */
+  }
+
+  .rocket-body {
+    width: 20px;
+    height: 40px;
+    background: #ff4500;
+    position: relative;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .rocket-tip {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #ff4500;
+    position: relative;
+    top: -20px;
+  }
+
+  /* Background Blast Styles */
+  .blast {
+    position: absolute;
+    top: -20px; /* Start at rocket tip */
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle, #ffd700 20%, #ff4500 60%, transparent);
+    border-radius: 50%;
+    animation: circularFireworkBlast 3.5s infinite ease-out;
+  }
+
+  /* Animations */
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(30deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-30deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  @keyframes circularFireworkBlast {
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 1;
+      box-shadow: 0 0 20px #ffd700, 0 0 30px #ff4500;
+    }
+    40% {
+      transform: translateY(-100vh) scale(2); /* Rise to top before bursting */
+      opacity: 0.9;
+      box-shadow: 0 0 60px #ff4500, 0 0 100px #ffd700;
+    }
+    100% {
+      transform: translateY(calc(-100vh * var(--random-y))) translateX(calc(100vw * var(--random-x))) scale(0.2);
+      opacity: 0;
+      box-shadow: 0 0 20px #ffd700;
+    }
+  }

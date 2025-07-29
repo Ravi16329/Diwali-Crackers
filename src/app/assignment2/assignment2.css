@@ -1,0 +1,106 @@
+.container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h2 {
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.button-row {
+  display: flex;
+  gap: 40px;
+}
+
+.btn-container button {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#create-btn {
+  background-color: #0f93c9; /* Blue */
+}
+
+#execute-btn {
+  background-color: #218b3a; /* Green */
+}
+
+#cancel-btn {
+  background-color: #e23d3d; /* Red */
+}
+
+#databinding{
+  text-align:center;
+  border:2px solid black;
+}
+
+.image{
+  border-radius:50px;
+}
+
+
+#button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  background-color: #ffc107; /* Golden Yellow */
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#button:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+
+
+/* Section headers */
+div h3:not(.container h3) {
+  font-size: 24px;
+  margin-top: 30px;
+  color: #333;
+  text-align: center;
+}
+
+/* Pipe outputs */
+div h2:not(.container h2) {
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+  margin: 8px 0;
+}
+
+/* Directive styling */
+[appHighlight] {
+  display: block;
+  padding: 12px 20px;
+  margin: 20px auto;
+  width: fit-content;
+  background-color: #f4f4f4;
+  border-left: 5px solid #007bff;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+[appHighlight]:hover {
+  background-color: #d0e9ff;
+}

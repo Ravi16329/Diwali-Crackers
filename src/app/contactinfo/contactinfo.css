@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column; /* This makes card & button stack vertically */
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #1a2a44;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav .date {
+      font-size: 14px;
+    }
+
+    /* Bubbles Background */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bubbles li {
+      position: absolute;
+      border-radius: 50%;
+      background-color: #ff6ec4; /* Default color */
+      animation: bubbleMove 10s linear infinite;
+    }
+
+    @keyframes bubbleMove {
+      0% { transform: translate(0, 100vh); opacity: 0.6; }
+      100% { transform: translate(0, -100vh); opacity: 0; }
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Contact Card */
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 1;
+      width:500px;
+    }
+
+    .contact-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #ddd;
+    }
+
+    .contact-card h2 {
+      margin: 10px 0 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .contact-card .info {
+      font-size: 16px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .contact-card .info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .contact-card .info a:hover {
+      text-decoration: underline;
+    }
+
+   button {
+  margin-top: 20px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}

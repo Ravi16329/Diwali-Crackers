@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<!-- Bubbles Background -->
+<ul class="bubbles">
+  <li *ngFor="let bubble of bubbles"
+      [ngStyle]="{
+        left: bubble.left,
+        width: bubble.size + 'px',
+        height: bubble.size + 'px',
+        backgroundColor: bubble.color,
+        animationDelay: bubble.delay + 's'
+      }">
+  </li>
+</ul>
+
+<!-- Contact Card -->
+<div class="contact-card">
+  <img src="https://www.bing.com/th?id=OIP.jMn9WDZKCSZPbIfP1SGvmwHaJQ&pid=Api&rs=1&c=1&qlt=95&w=123&h=154"
+       alt="Ravindra's Photo"
+       (error)="onImgError($event)">
+  <h2>Ravindra</h2>
+  <div class="info">
+    📞 Phone 1: <a href="tel:9030550431">9030550431</a><br>
+    📞 Phone 2: 9701145323<br>
+    📧 Email: <a href="mailto:hellobyebyehello@gmail.com">hellobyebyehello&#64;gmail.com</a><br>
+    🏠 Address: Market Yard, Brilliant Tuition<br>
+    Pincode: 515511
+  </div>
+</div>
+
+<button (click)="clickBro()">If You have Dout like this 'CAN I CALL OR NOT ?' then Click Me U will get a Answer </button>
+
+</body>
+</html>
