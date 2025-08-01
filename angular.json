@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/Diwali-Crackers",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -44,8 +45,7 @@
                 }
               ],
               "outputHashing": "all",
-             "serviceWorker": false
-
+              "serviceWorker": false
             },
             "development": {
               "optimization": false,
@@ -89,6 +89,9 @@
               "src/styles.css"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
